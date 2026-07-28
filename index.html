@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Mahesh Lambe — mlmrx</title>
+<title>Mahesh Lambe — Builder</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root{
@@ -67,7 +67,7 @@
     font-size:.78rem;
   }
   .topbar .brand{letter-spacing:.08em; color:var(--muted); text-transform:uppercase;}
-  .topbar nav{display:flex; gap:1.4rem;}
+  .topbar nav{display:flex; gap:1.4rem; flex-wrap:wrap;}
   .topbar a{color:var(--ink); text-decoration:none; letter-spacing:.05em;}
   .topbar a:hover{color:var(--accent); text-decoration:underline;}
 
@@ -120,6 +120,25 @@
   }
   .stamp.inked{animation:stampIn .45s cubic-bezier(.2,1.2,.4,1) .5s both;}
 
+  /* ── impact stats ────────────────────────── */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));
+    gap:1.5rem;
+  }
+  .stat{
+    display:flex; flex-direction:column; gap:.2rem;
+    border-top:2px solid var(--accent); padding-top:.9rem;
+  }
+  .stat b{
+    font-size:clamp(1.7rem,4vw,2.3rem); font-weight:600; line-height:1.1;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat span{
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
   /* ── thesis quote ────────────────────────── */
   .thesis{
     margin:0; padding:0 0 0 1.5rem;
@@ -137,11 +156,14 @@
   .sec-head h2{font-size:clamp(1.5rem,3.2vw,2rem);}
   .sec-head .note{margin:0; color:var(--muted); font-size:.95rem; max-width:44em;}
 
-  /* ── ledger entries ──────────────────────── */
+  .prose{margin:0; font-size:1.05rem; max-width:38em; color:var(--ink);}
+  .prose + .prose{margin-top:1rem;}
+
+  /* ── ledger entries (publications, talks, work) ── */
   .ledger{display:flex; flex-direction:column;}
   .entry{
     display:grid;
-    grid-template-columns:6rem 1fr auto;
+    grid-template-columns:6.5rem 1fr auto;
     gap:.4rem 1.6rem;
     padding:1.5rem 0;
     border-top:1px dashed var(--line);
@@ -160,6 +182,8 @@
   .entry h3 a{color:var(--ink); text-decoration:none;}
   .entry h3 a:hover{color:var(--accent); text-decoration:underline;}
   .entry p{margin:0; color:var(--muted); font-size:.97rem; max-width:38em;}
+  .entry .authors{font-size:.85rem; line-height:1.7;}
+  .entry .authors em{font-style:normal; color:var(--accent); font-weight:600;}
   .entry .lang{
     font-family:var(--mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase;
     color:var(--accent);
@@ -187,32 +211,11 @@
     font-family:var(--mono); font-size:.8rem;
   }
 
-  /* ── fork clusters ───────────────────────── */
-  .clusters{display:flex; flex-direction:column;}
-  .cluster{
-    display:grid;
-    grid-template-columns:14rem 1fr;
-    gap:.4rem 1.6rem;
-    padding:1.3rem 0;
-    border-top:1px dashed var(--line);
-    align-items:baseline;
-  }
-  .cluster:last-child{border-bottom:1px dashed var(--line);}
-  .cluster .clabel{
-    display:flex; flex-direction:column; gap:.25rem;
-  }
-  .cluster .clabel b{font-size:1rem; font-weight:600; color:var(--ink);}
-  .cluster .clabel span{
-    font-family:var(--mono); font-size:.68rem; letter-spacing:.14em;
-    text-transform:uppercase; color:var(--accent);
-    font-variant-numeric:tabular-nums;
-  }
-  .cluster .flist{
-    margin:0; font-family:var(--mono); font-size:.8rem; line-height:2.1; color:var(--muted);
-  }
-  .cluster .flist a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:.1em;}
-  .cluster .flist a:hover{color:var(--accent); border-bottom-color:var(--accent);}
-  .fork-note{margin:1.4rem 0 0; font-size:.85rem; color:var(--muted);}
+  .entry.sealed h3{color:var(--muted);}
+  .entry.sealed .lang{color:var(--muted); border-style:dashed;}
+  .entry.sealed .idx .when{color:var(--muted);}
+
+  .more-link{margin:1.4rem 0 0; font-size:.9rem;}
 
   /* ── focus ───────────────────────────────── */
   .focus-grid{
@@ -257,12 +260,11 @@
     .entry{grid-template-columns:1fr; gap:.5rem;}
     .entry .idx{flex-direction:row; gap:.9rem;}
     .entry .lang{justify-self:start;}
-    .cluster{grid-template-columns:1fr; gap:.6rem;}
   }
 </style>
-<meta name="description" content="Mahesh Lambe (mlmrx) — builder working on the trust layer for the agentic era: identity, consent, and proof for AI agents.">
-<meta property="og:title" content="Mahesh Lambe — mlmrx">
-<meta property="og:description" content="Builder. Working on the trust layer for the agentic era — identity, consent, and proof for AI agents.">
+<meta name="description" content="Mahesh Lambe — Founder & CEO of Unify Dynamics. Two decades of enterprise AI; now architecting the trust layer for the internet of AI agents. MIT Project NANDA · OWASP AIVSS.">
+<meta property="og:title" content="Mahesh Lambe — Builder">
+<meta property="og:description" content="Founder & CEO, Unify Dynamics. Architecting the trust layer for the internet of AI agents — MIT Project NANDA, OWASP AIVSS, AgentHalo.">
 <meta property="og:url" content="https://mlmrx.github.io/">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧾</text></svg>">
@@ -271,17 +273,18 @@
 <div class="page">
 
   <header class="topbar mono">
-    <span class="brand">mlmrx · trust ledger</span>
+    <span class="brand">Mahesh Lambe · trust ledger</span>
     <nav>
       <a href="https://github.com/mlmrx">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/maheshlambe">LinkedIn ↗</a>
+      <a href="https://medium.com/@maheshlambe">Medium ↗</a>
     </nav>
   </header>
 
   <section class="hero">
-    <p class="eyebrow mono">Attestation record · github.com/mlmrx</p>
+    <p class="eyebrow mono">Attestation record · Mahesh Lambe</p>
     <h1>Mahesh Lambe</h1>
-    <p class="deck">Builder. Working on the <strong>trust layer for the agentic era</strong> — identity, consent, and proof for AI agents that act on people's behalf.</p>
+    <p class="deck">Founder &amp; CEO, <strong>Unify Dynamics</strong>. Two decades building AI platforms for governments and global enterprises — now architecting the <strong>trust layer for the internet of AI agents</strong>.</p>
     <div class="stamp" id="stamp" aria-hidden="true">
       <span class="s1">Verified</span>
       <span class="s2">Builder</span>
@@ -289,10 +292,26 @@
     </div>
     <ul class="meta mono">
       <li>Palo Alto, CA</li>
-      <li>Unify Dynamics</li>
-      <li>44 public repositories</li>
-      <li>Pull Shark ×2 · YOLO · Pair Extraordinaire</li>
+      <li>Founder &amp; CEO, Unify Dynamics</li>
+      <li>MIT Project NANDA</li>
+      <li>OWASP AIVSS</li>
     </ul>
+  </section>
+
+  <section class="stats reveal" aria-label="Track record at a glance">
+    <div class="stat"><b>20+</b><span>Years in enterprise AI</span></div>
+    <div class="stat"><b>3</b><span>Research papers · 2025</span></div>
+    <div class="stat"><b>100+</b><span>Angel investments</span></div>
+    <div class="stat"><b>146</b><span>Repositories</span></div>
+  </section>
+
+  <section class="about-sec reveal">
+    <header class="sec-head">
+      <span class="eyebrow mono">Section A</span>
+      <h2>Track record</h2>
+    </header>
+    <p class="prose">Mahesh has spent twenty-plus years building AI-driven platforms where the stakes are real — modernizing state departments and shipping AI and CRM systems for organizations including <strong>Microsoft</strong>, <strong>PIMCO</strong>, and the <strong>NYPD</strong>.</p>
+    <p class="prose">Today he is the founder and CEO of <strong>Unify Dynamics</strong>, a core contributor to <strong>MIT's Project NANDA</strong> — the effort to build the DNS-like index for the internet of AI agents — a reviewer-contributor to the <strong>OWASP AI Vulnerability Scoring System</strong>, and an angel investor in <strong>100+ startups</strong> across AI, automation, and enterprise SaaS.</p>
   </section>
 
   <blockquote class="thesis reveal">
@@ -300,16 +319,93 @@
     <cite class="mono">— AgentHalo, README</cite>
   </blockquote>
 
-  <section class="ledger-sec reveal">
+  <section class="research-sec reveal">
     <header class="sec-head">
-      <span class="eyebrow mono">Section A · 8 entries</span>
-      <h2>Original work</h2>
-      <p class="note">Every public repository authored in this ledger. Each one is a bet on the same idea: agents earn autonomy through consent, receipts, and audit — not through bigger chat windows.</p>
+      <span class="eyebrow mono">Section B · Peer network: MIT Media Lab, OWASP</span>
+      <h2>Research &amp; standards</h2>
+      <p class="note">Published work on the architecture the agentic internet will run on: naming, discovery, resolution, and zero-trust security for autonomous agents.</p>
     </header>
+    <div class="ledger">
+      <article class="entry">
+        <div class="idx"><span>arXiv 2508.03101</span><span class="when">Aug 2025</span></div>
+        <div class="body">
+          <h3><a href="https://arxiv.org/abs/2508.03101">Using the NANDA Index Architecture in Practice: An Enterprise Perspective</a></h3>
+          <p class="authors">S. Wang, R. Raskar, <em>M. Lambe</em>, P. Chari, R. Singhal, S. Gupta, R. Ranjan, K. Huang</p>
+          <p>Zero Trust Agentic Access (ZTAA) for enterprise agent ecosystems: discovery, capability verification, and secure cross-protocol collaboration.</p>
+        </div>
+        <span class="lang">Paper</span>
+      </article>
+      <article class="entry">
+        <div class="idx"><span>arXiv 2508.03113</span><span class="when">Aug 2025</span></div>
+        <div class="body">
+          <h3><a href="https://arxiv.org/abs/2508.03113">NANDA Adaptive Resolver: Architecture for Dynamic Resolution of AI Agent Names</a></h3>
+          <p class="authors">J. Zinky, H. Seshadri, <em>M. Lambe</em>, P. Chari, R. Raskar</p>
+          <p>How agent names resolve dynamically — the plumbing beneath a globally addressable index of AI agents.</p>
+        </div>
+        <span class="lang">Paper</span>
+      </article>
+      <article class="entry">
+        <div class="idx"><span>arXiv 2506.12003</span><span class="when">Jun 2025</span></div>
+        <div class="body">
+          <h3><a href="https://arxiv.org/abs/2506.12003">Upgrade or Switch: Do We Need a Next-Gen Trusted Architecture for the Internet of AI Agents?</a></h3>
+          <p class="authors">R. Raskar, P. Chari, J. Grogan, <em>M. Lambe</em>, R. Lincourt, R. Bala, A. Joshi, A. Singh, A. Chopra, R. Ranjan, S. Gupta, D. Stripelis, M. Gorskikh, S. Wang</p>
+          <p>The foundational question: can today's internet carry trustworthy autonomous agents, or does it need a new trust architecture?</p>
+        </div>
+        <span class="lang">Paper</span>
+      </article>
+      <article class="entry">
+        <div class="idx"><span>OWASP</span><span class="when">2025</span></div>
+        <div class="body">
+          <h3><a href="https://aivss.owasp.org/">OWASP AI Vulnerability Scoring System (AIVSS)</a></h3>
+          <p>Reviewer &amp; contributor to the framework for scoring vulnerabilities in AI and agentic systems.</p>
+        </div>
+        <span class="lang">Standard</span>
+      </article>
+    </div>
+  </section>
 
+  <section class="writing-sec reveal">
+    <header class="sec-head">
+      <span class="eyebrow mono">Section C</span>
+      <h2>Writing &amp; talks</h2>
+    </header>
+    <div class="ledger">
+      <article class="entry">
+        <div class="idx"><span>Talk</span><span class="when">Video</span></div>
+        <div class="body">
+          <h3><a href="https://www.youtube.com/watch?v=RD9ANgSvSZE">Why switch to a different DNS model for the agentic registry</a></h3>
+          <p>Conference talk on why the internet of AI agents needs a new naming and discovery model.</p>
+        </div>
+        <span class="lang">YouTube</span>
+      </article>
+      <article class="entry">
+        <div class="idx"><span>Essay</span><span class="when">Medium</span></div>
+        <div class="body">
+          <h3><a href="https://medium.com/@maheshlambe/weaving-the-quilt-how-project-nanda-could-become-the-dns-of-an-agentic-internet-ba49107974b7">Weaving the Quilt: How Project NANDA Could Become the DNS of an Agentic Internet</a></h3>
+          <p>The case for a globally addressable agent index — DNS upgraded with cryptographic identity and machine-negotiated policy.</p>
+        </div>
+        <span class="lang">Essay</span>
+      </article>
+      <article class="entry">
+        <div class="idx"><span>Essay</span><span class="when">Medium</span></div>
+        <div class="body">
+          <h3><a href="https://medium.com/@maheshlambe/deep-dive-series-on-project-nanda-4c1d0eb3b332">Deep Dive on Project NANDA: Under the Hood of the NANDA Index</a></h3>
+          <p>Part one of a technical series on the index that could become the DNS of autonomous software.</p>
+        </div>
+        <span class="lang">Essay</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="building-sec reveal">
+    <header class="sec-head">
+      <span class="eyebrow mono">Section D · 146 repositories</span>
+      <h2>Building</h2>
+      <p class="note">The research above, turned into working systems. Public entries in full; private work under seal.</p>
+    </header>
     <div class="ledger">
       <article class="entry featured">
-        <div class="idx"><span>Entry 001</span><span class="when">Flagship</span></div>
+        <div class="idx"><span>Flagship</span><span class="when">Open</span></div>
         <div class="body">
           <h3><a href="https://github.com/mlmrx/AgentHalo">AgentHalo</a></h3>
           <p>A personal trust field for AI agents — the layer where an agent carries memory, identity, permissions, and consent across every device you own. Not a chatbot. Not a super app.</p>
@@ -317,152 +413,35 @@
             <li>Consent receipts and short-lived delegation grants with purpose, scope, and expiry</li>
             <li>Append-only audit trail of intents, policy changes, and agent outcomes</li>
             <li>HaloProof — signed proofs that verify what an agent was allowed to do, and did</li>
-            <li>Nine modules: Vault, ID, Consent, Policy, Delegation, Registry, Resolver, Connect, Audit</li>
           </ul>
         </div>
         <span class="lang">JavaScript</span>
       </article>
 
       <article class="entry">
-        <div class="idx"><span>Entry 002</span><span class="when">Jul 2026</span></div>
+        <div class="idx"><span>Toolchain</span><span class="when">Jul 2026</span></div>
         <div class="body">
-          <h3><a href="https://github.com/mlmrx/truthseek-eval-harness">truthseek-eval-harness</a></h3>
-          <p>Evaluation harness for Truthseek. If an agent makes claims, the claims get tested — the newest entry in the ledger.</p>
+          <h3><a href="https://github.com/mlmrx/truthseek-eval-harness">Truthseek</a></h3>
+          <p>Eval harness and <a href="https://github.com/mlmrx/truthseek-vscode">VS Code companion</a> — if an agent makes claims, the claims get tested.</p>
         </div>
-        <span class="lang">Python</span>
+        <span class="lang">Python · JS</span>
       </article>
 
-      <article class="entry">
-        <div class="idx"><span>Entry 003</span><span class="when">Jul 2026</span></div>
+      <article class="entry sealed">
+        <div class="idx"><span>Sealed</span><span class="when">102 repos</span></div>
         <div class="body">
-          <h3><a href="https://github.com/mlmrx/truthseek-vscode">truthseek-vscode</a></h3>
-          <p>Truthseek, in the editor — a VS Code companion to the eval harness.</p>
+          <h3>Private work under seal</h3>
+          <p>Verified revenue infrastructure · sovereign AI · enterprise agent control planes · evidence systems · agentic commerce · ████████ ██ ███████. Unsealed when they ship.</p>
         </div>
-        <span class="lang">JavaScript</span>
-      </article>
-
-      <article class="entry">
-        <div class="idx"><span>Entry 004</span><span class="when">Jun 2026</span></div>
-        <div class="body">
-          <h3><a href="https://github.com/mlmrx/awesome-skills-library">awesome-skills-library</a></h3>
-          <p>A curated library of agent skills, awesome-list style.</p>
-        </div>
-        <span class="lang">Python</span>
-      </article>
-
-      <article class="entry">
-        <div class="idx"><span>Entry 005</span><span class="when">Oct 2025</span></div>
-        <div class="body">
-          <h3><a href="https://github.com/mlmrx/GoogleAIStudioBuilds">GoogleAIStudioBuilds</a></h3>
-          <p>Experiments with Google AI Studio.</p>
-        </div>
-        <span class="lang">TypeScript</span>
-      </article>
-
-      <article class="entry">
-        <div class="idx"><span>Entry 006</span><span class="when">Oct 2025</span></div>
-        <div class="body">
-          <h3><a href="https://github.com/mlmrx/MyExperiments">MyExperiments</a></h3>
-          <p>Exactly what it says — a working file of experiments.</p>
-        </div>
-        <span class="lang">Misc</span>
-      </article>
-
-      <article class="entry">
-        <div class="idx"><span>Entry 007</span><span class="when">Oct 2025</span></div>
-        <div class="body">
-          <h3><a href="https://github.com/mlmrx/laudable-proof">laudable-proof</a></h3>
-          <p>A TypeScript experiment whose name does the talking.</p>
-        </div>
-        <span class="lang">TypeScript</span>
-      </article>
-
-      <article class="entry">
-        <div class="idx"><span>Entry 008</span><span class="when">May 2025</span></div>
-        <div class="body">
-          <h3><a href="https://github.com/mlmrx/BD">BD</a></h3>
-          <p>An unlabeled JavaScript entry — every ledger has one.</p>
-        </div>
-        <span class="lang">JavaScript</span>
+        <span class="lang">█████</span>
       </article>
     </div>
-  </section>
-
-  <section class="forks-sec reveal">
-    <header class="sec-head">
-      <span class="eyebrow mono">Section B · 36 countersigned</span>
-      <h2>Upstream interests</h2>
-      <p class="note">All 36 forks tracked in this ledger, grouped by what they're for. What a builder watches says what they're building toward.</p>
-    </header>
-    <div class="clusters">
-      <div class="cluster">
-        <div class="clabel"><b>Agentic commerce &amp; payments</b><span>5 forks</span></div>
-        <p class="flist">
-          <a href="https://github.com/mlmrx/agentic-commerce-protocol">agentic-commerce-protocol</a>,
-          <a href="https://github.com/mlmrx/AP2">AP2</a>,
-          <a href="https://github.com/mlmrx/trusted-agentic-commerce-protocol">trusted-agentic-commerce-protocol</a>,
-          <a href="https://github.com/mlmrx/ard-spec">ard-spec</a>,
-          <a href="https://github.com/mlmrx/gumroad">gumroad</a>
-        </p>
-      </div>
-      <div class="cluster">
-        <div class="clabel"><b>Agent protocols &amp; interop</b><span>9 forks</span></div>
-        <p class="flist">
-          <a href="https://github.com/mlmrx/A2A">A2A</a>,
-          <a href="https://github.com/mlmrx/mcp">mcp</a>,
-          <a href="https://github.com/mlmrx/csharp-sdk">csharp-sdk</a>,
-          <a href="https://github.com/mlmrx/registry">registry</a>,
-          <a href="https://github.com/mlmrx/awesome-mcp-servers">awesome-mcp-servers</a>,
-          <a href="https://github.com/mlmrx/NLWeb">NLWeb</a>,
-          <a href="https://github.com/mlmrx/whatsapp-mcp">whatsapp-mcp</a>,
-          <a href="https://github.com/mlmrx/A2UI">A2UI</a>,
-          <a href="https://github.com/mlmrx/agntcy-website">agntcy-website</a>
-        </p>
-      </div>
-      <div class="cluster">
-        <div class="clabel"><b>Frameworks &amp; tooling</b><span>8 forks</span></div>
-        <p class="flist">
-          <a href="https://github.com/mlmrx/agent-framework">agent-framework</a>,
-          <a href="https://github.com/mlmrx/motia">motia</a>,
-          <a href="https://github.com/mlmrx/gbrain">gbrain</a>,
-          <a href="https://github.com/mlmrx/magentic-ui">magentic-ui</a>,
-          <a href="https://github.com/mlmrx/AgentLaboratory">AgentLaboratory</a>,
-          <a href="https://github.com/mlmrx/gateway">gateway</a>,
-          <a href="https://github.com/mlmrx/openai-academy-openai-agents-sdk">openai-academy-openai-agents-sdk</a>,
-          <a href="https://github.com/mlmrx/openai-cookbook">openai-cookbook</a>
-        </p>
-      </div>
-      <div class="cluster">
-        <div class="clabel"><b>Agent security &amp; safety</b><span>4 forks</span></div>
-        <p class="flist">
-          <a href="https://github.com/mlmrx/OWASP-Agentic-AI">OWASP-Agentic-AI</a>,
-          <a href="https://github.com/mlmrx/www-project-artificial-intelligence-vulnerability-scoring-system">owasp-aivss</a>,
-          <a href="https://github.com/mlmrx/aisecurity-python-sdk">aisecurity-python-sdk</a>,
-          <a href="https://github.com/mlmrx/synthid-text">synthid-text</a>
-        </p>
-      </div>
-      <div class="cluster">
-        <div class="clabel"><b>Models, speech &amp; research</b><span>10 forks</span></div>
-        <p class="flist">
-          <a href="https://github.com/mlmrx/whisper">whisper</a>,
-          <a href="https://github.com/mlmrx/NVIDIA-Canary-1B-V2-Web-UI">NVIDIA-Canary-1B-V2-Web-UI</a>,
-          <a href="https://github.com/mlmrx/nanochat">nanochat</a>,
-          <a href="https://github.com/mlmrx/LLaMA-Factory">LLaMA-Factory</a>,
-          <a href="https://github.com/mlmrx/alphagenome">alphagenome</a>,
-          <a href="https://github.com/mlmrx/LLM101n">LLM101n</a>,
-          <a href="https://github.com/mlmrx/omi">omi</a>,
-          <a href="https://github.com/mlmrx/smmile">smmile</a>,
-          <a href="https://github.com/mlmrx/adapter">adapter</a>,
-          <a href="https://github.com/mlmrx/projnanda">projnanda</a>
-        </p>
-      </div>
-    </div>
-    <p class="fork-note">Also pinned on the profile: <a href="https://github.com/projnanda/projnanda">projnanda</a> — networked-agents research (124★) — and its <a href="https://github.com/projnanda/research">papers repo</a>.</p>
+    <p class="more-link mono"><a href="https://github.com/mlmrx">Full ledger — 44 public repositories on GitHub ↗</a></p>
   </section>
 
   <section class="focus-sec reveal">
     <header class="sec-head">
-      <span class="eyebrow mono">Section C</span>
+      <span class="eyebrow mono">Section E</span>
       <h2>Focus</h2>
     </header>
     <div class="focus-grid">
@@ -475,24 +454,25 @@
         <p>Buyers, agents, and businesses transacting safely: open protocols, payment rails, and receipts for every action taken.</p>
       </div>
       <div class="focus-item">
-        <h3>Truth &amp; evals</h3>
-        <p>If an agent acts on your behalf, its claims must be testable. Harnesses and proofs over vibes.</p>
+        <h3>Standards &amp; security</h3>
+        <p>The agentic internet gets built once. Naming, discovery, and vulnerability scoring have to be right from the start.</p>
       </div>
     </div>
   </section>
 
   <footer class="sig reveal">
     <pre class="sig-block">── proof of work ─────────────────────────────
-<b>subject</b>   github.com/mlmrx
-<b>name</b>      Mahesh Lambe
-<b>role</b>      builder
-<b>issued</b>    2026 · palo alto, ca
-<b>entries</b>   44 public · 8 original · 36 countersigned
+<b>subject</b>   Mahesh Lambe · github.com/mlmrx
+<b>role</b>      founder &amp; ceo · unify dynamics
+<b>record</b>    20+ yrs enterprise AI · 3 papers · owasp aivss · 100+ investments
+<b>entries</b>   146 repositories · 44 public · 102 sealed
 <b>claims</b>    ships=true · consent=required · audit=append-only
-<b>sig</b>       mlmrx — self-signed · verify on GitHub</pre>
+<b>sig</b>       mlmrx — self-signed · verify above</pre>
     <div class="sig-links">
       <a href="https://github.com/mlmrx">github.com/mlmrx ↗</a>
       <a href="https://www.linkedin.com/in/maheshlambe">linkedin.com/in/maheshlambe ↗</a>
+      <a href="https://medium.com/@maheshlambe">medium.com/@maheshlambe ↗</a>
+      <a href="https://arxiv.org/abs/2506.12003">arxiv.org ↗</a>
     </div>
     <p class="colophon">Every entry above links to its source. Trust, then verify.</p>
   </footer>
