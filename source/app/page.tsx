@@ -270,8 +270,6 @@ export default function Home() {
             </h1>
             <p className="intro">
               I build the systems that help AI agents earn our trust.
-              <br className="desktop-break" /> Founder of Unify Dynamics.
-              Contributor to MIT Project NANDA.
             </p>
             <a className="text-link" href="#work">
               Explore the work <span aria-hidden="true">↓</span>
