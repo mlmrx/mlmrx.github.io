@@ -10,11 +10,30 @@ const essays = [
  ['Under the Hood of the NANDA Index','A technical deep dive into naming and discovery.','https://medium.com/@maheshlambe/deep-dive-series-on-project-nanda-4c1d0eb3b332'],
  ['Engineering AgentFacts','Giving every agent a verifiable capability record.','https://medium.com/@maheshlambe/deep-dive-project-nanda-building-the-agentic-web-part-2-engineering-agent-facts-ea5874d09572'],
 ];
+const publicWork = [
+ ['SovereignAI','Platform','User-owned models, data and runtime for a more sovereign AI stack.','https://github.com/mlmrx/SovereignAI','JavaScript'],
+ ['FreeCRM','Platform','A free CRM built to stay useful, open and available to everyone.','https://github.com/mlmrx/FreeCRM','TypeScript'],
+ ['Enterprise Agent Simulation Assurance','Platform','Deterministic simulation, evidence and release assurance for enterprise agents.','https://github.com/mlmrx/enterprise-agent-simulation-assurance-platform','TypeScript'],
+ ['iswebmcp','Web platform','A public home for asking whether a site is ready for WebMCP.','https://iswebmcp.com','TypeScript'],
+ ['Lego Claw','Platform','Composable building blocks for agentic systems and workflows.','https://github.com/mlmrx/lego-claw-platform','TypeScript'],
+ ['Sovereign Suite','Tool suite','Local-first, self-hostable tools designed with privacy in mind.','https://github.com/mlmrx/sovereign-suite','TypeScript'],
+ ['OpenWood','Creative platform','An open-source agentic micro-drama production studio with evidence-gated releases.','https://github.com/mlmrx/OpenWood','TypeScript'],
+ ['Truthseek Eval Harness','Tool','An evaluation harness for testing the claims made by agents.','https://github.com/mlmrx/truthseek-eval-harness','Python'],
+ ['Truthseek VS Code','Tool','A companion for bringing claim evaluation into the editor.','https://github.com/mlmrx/truthseek-vscode','JavaScript'],
+ ['AgentHalo','Trust layer','Identity, memory, permissions and consent for an agent across devices.','https://github.com/mlmrx/AgentHalo','JavaScript'],
+ ['Laudable Proof','Evidence tool','A public experiment in verifiable proof and recognition.','https://github.com/mlmrx/laudable-proof','TypeScript'],
+ ['Awesome Skills Library','Library','A curated library for discovering reusable AI skills.','https://github.com/mlmrx/awesome-skills-library','Python'],
+ ['Google AI Studio Builds','Experiments','A working notebook of experiments built with Google AI Studio.','https://github.com/mlmrx/GoogleAIStudioBuilds','TypeScript'],
+ ['My Experiments','Experiments','An open record of prototypes, ideas and working explorations.','https://github.com/mlmrx/MyExperiments','Open work'],
+ ['BD','Tool','A small public software experiment from the wider lab.','https://github.com/mlmrx/BD','JavaScript'],
+];
+const publicWorkSection = <section id="library" className="section library"><div className="section-heading"><p className="eyebrow">Public work index</p><h2>Everything in the<br/><em>open.</em></h2><p>Platforms, tools and experiments built in public.<br/>Private work and unrelated forks stay out of view.</p></div><div className="work-index">{publicWork.map(([name,type,description,url,language],i)=><a className="work-row" key={url} href={url}><span className="index">{String(i+1).padStart(2,'0')}</span><div><span className="paper-meta">{type} · {language}</span><h3>{name}</h3><p>{description}</p></div><Arrow/></a>)}</div></section>;
 function Arrow(){return <span aria-hidden="true" className="arrow">↗</span>}
 export default function Home(){return <>
 <a href="#main" className="skip">Skip to content</a>
 <header className="masthead" id="top"><a href="#top" className="wordmark" aria-label="Mahesh Lambe home">ml<span>.</span></a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#research">Research</a><a href="#about">About</a><a href="#connect">Connect <Arrow/></a></nav></header>
 <main id="main">
+{publicWorkSection}
 <section className="hero" aria-labelledby="intro"><div className="hero-content"><p className="eyebrow">Mahesh Lambe · Builder & founder</p><h1 id="intro">Intelligence is everywhere.<br/><em>Trust is what we build.</em></h1><p className="intro">I build the systems that help AI agents earn our trust.<br className="desktop-break"/> Founder of Unify Dynamics. Contributor to MIT Project NANDA.</p><a className="text-link" href="#work">Explore the work <span aria-hidden="true">↓</span></a><WolfScene/></div><div className="hero-bottom"><span>Palo Alto, California</span><span>Independent spirit. Shared progress.</span><a href="#work" aria-label="Scroll to selected work">↓</a></div></section>
 <section id="work" className="section"><div className="section-heading"><p className="eyebrow">01 / Selected work</p><h2>Ideas, made real.</h2><p>Identity, consent and evidence.<br/>The foundations for agents we can depend on.</p></div><div className="projects">
 <article className="project"><div className="project-top"><span className="eyebrow">Trust & identity</span><span className="project-number">01</span></div><h3>AgentHalo<span className="dot">.</span></h3><p>A personal trust field for AI agents. Memory, identity, permissions and consent that travel with you, across your devices.</p><ul><li>Purpose-bound delegation and consent receipts</li><li>An append-only record of agent actions</li><li>Signed proofs with HaloProof</li></ul><a href="https://github.com/mlmrx/AgentHalo" className="text-link">Explore AgentHalo <Arrow/></a></article>

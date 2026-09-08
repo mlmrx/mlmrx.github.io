@@ -18,12 +18,11 @@ export default function WolfScene() {
   const stage = useRef<HTMLDivElement>(null);
   const actor = useRef<HTMLSpanElement>(null);
   const elapsed = useRef(0);
-  const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [ready, setReady] = useState(false);
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sync = () => { setReduced(media.matches); setPaused(media.matches); };
+    const sync = () => setReduced(media.matches);
     sync();
     media.addEventListener('change', sync);
     const image = new Image();
@@ -42,8 +41,8 @@ export default function WolfScene() {
       const delta = previous ? Math.min(now - previous, 70) : 0;
       previous = now;
       const width = stage.current?.clientWidth ?? 700;
-      if (!paused && visible && !document.hidden) elapsed.current += delta;
-      const pose = reduced && paused ? {x:(width-190)/2,frame:0} : wolfPose(elapsed.current, width);
+      if (!reduced && visible && !document.hidden) elapsed.current += delta;
+      const pose = reduced ? {x:(width-190)/2,frame:0} : wolfPose(elapsed.current, width);
       if (actor.current) {
         actor.current.style.transform = `translate3d(${pose.x}px,${pose.frame >= 4 ? 24 : 0}px,0)`;
         actor.current.style.backgroundPosition = `${(pose.frame % 4) * 100 / 3}% ${Math.floor(pose.frame / 4) * 100}%`;
@@ -52,13 +51,12 @@ export default function WolfScene() {
     };
     id = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(id); observer.disconnect(); };
-  }, [paused, ready, reduced]);
+  }, [ready, reduced]);
   return <div className="wolf-scene">
     <div className="wolf-stage" ref={stage} role="img" aria-label="A graphite wolf walks across the page, pauses, then continues on its way.">
       {!ready && <img className="wolf-still" src="/wolf.png" width="190" height="190" alt=""/>}
       <span ref={actor} className="wolf-actor" aria-hidden="true" style={{visibility:ready?'visible':'hidden'}}/>
     </div>
-    {ready && <div className="motion-controls"><button type="button" onClick={() => setPaused(p=>!p)} aria-pressed={paused}>{paused?'Play animation':'Pause animation'}</button><span aria-hidden="true">·</span><button type="button" onClick={() => { elapsed.current=0; setPaused(false); }}>Replay wolf</button></div>}
   </div>;
 }
 
