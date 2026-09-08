@@ -28,12 +28,21 @@ const publicWork = [
  ['BD','Tool','A small public software experiment from the wider lab.','https://github.com/mlmrx/BD','JavaScript'],
 ];
 const publicWorkSection = <section id="library" className="section library"><div className="section-heading"><p className="eyebrow">Public work index</p><h2>Everything in the<br/><em>open.</em></h2><p>Platforms, tools and experiments built in public.<br/>Private work and unrelated forks stay out of view.</p></div><div className="work-index">{publicWork.map(([name,type,description,url,language],i)=><a className="work-row" key={url} href={url}><span className="index">{String(i+1).padStart(2,'0')}</span><div><span className="paper-meta">{type} · {language}</span><h3>{name}</h3><p>{description}</p></div><Arrow/></a>)}</div></section>;
+const privateWork = [
+ ['Verified revenue infrastructure','Private systems for making revenue operations more trustworthy, traceable and easier to verify.'],
+ ['Sovereign AI systems','Private product work around user-owned models, data and runtime infrastructure.'],
+ ['Enterprise agent control planes','Private infrastructure for agent policy, permissions, deployment and operational control.'],
+ ['Evidence systems','Private tools for testing claims, preserving provenance and creating audit-ready records.'],
+ ['Agentic commerce','Private protocol and product work for safer transactions between people, agents and businesses.'],
+];
+const privateWorkSection = <section className="section private-work"><div className="section-heading"><p className="eyebrow">Private work</p><h2>Some work stays<br/><em>under seal.</em></h2><p>Titles and direction only. The details remain private until the work is ready to ship.</p></div><div className="private-index">{privateWork.map(([title,description],i)=><div className="private-row" key={title}><span className="index">{String(i+1).padStart(2,'0')}</span><div><h3>{title}</h3><p>{description}</p></div><span className="private-mark" aria-label="Private work">Private</span></div>)}</div></section>;
 function Arrow(){return <span aria-hidden="true" className="arrow">↗</span>}
 export default function Home(){return <>
 <a href="#main" className="skip">Skip to content</a>
 <header className="masthead" id="top"><a href="#top" className="wordmark" aria-label="Mahesh Lambe home">ml<span>.</span></a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#research">Research</a><a href="#about">About</a><a href="#connect">Connect <Arrow/></a></nav></header>
 <main id="main">
 {publicWorkSection}
+{privateWorkSection}
 <section className="hero" aria-labelledby="intro"><div className="hero-content"><p className="eyebrow">Mahesh Lambe · Builder & founder</p><h1 id="intro">Intelligence is everywhere.<br/><em>Trust is what we build.</em></h1><p className="intro">I build the systems that help AI agents earn our trust.<br className="desktop-break"/> Founder of Unify Dynamics. Contributor to MIT Project NANDA.</p><a className="text-link" href="#work">Explore the work <span aria-hidden="true">↓</span></a><WolfScene/></div><div className="hero-bottom"><span>Palo Alto, California</span><span>Independent spirit. Shared progress.</span><a href="#work" aria-label="Scroll to selected work">↓</a></div></section>
 <section id="work" className="section"><div className="section-heading"><p className="eyebrow">01 / Selected work</p><h2>Ideas, made real.</h2><p>Identity, consent and evidence.<br/>The foundations for agents we can depend on.</p></div><div className="projects">
 <article className="project"><div className="project-top"><span className="eyebrow">Trust & identity</span><span className="project-number">01</span></div><h3>AgentHalo<span className="dot">.</span></h3><p>A personal trust field for AI agents. Memory, identity, permissions and consent that travel with you, across your devices.</p><ul><li>Purpose-bound delegation and consent receipts</li><li>An append-only record of agent actions</li><li>Signed proofs with HaloProof</li></ul><a href="https://github.com/mlmrx/AgentHalo" className="text-link">Explore AgentHalo <Arrow/></a></article>
