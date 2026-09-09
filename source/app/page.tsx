@@ -1,4 +1,4 @@
-import WolfScene from './wolf-scene';
+import EagleScene from './eagle-scene';
 const papers = [
   [
     '2508.03101',
@@ -220,7 +220,7 @@ export default function Home() {
             <h1 id="intro">
               <span>Love of</span> <span>Open Secure AI</span>
             </h1>
-            <WolfScene />
+            <EagleScene />
           </div>
           <div className="hero-bottom">
             <span>Palo Alto, California</span>

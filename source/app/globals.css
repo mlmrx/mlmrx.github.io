@@ -154,30 +154,35 @@ a:hover .arrow {
 .hero-bottom a:hover span {
   transform: translateY(4px);
 }
-.wolf-scene {
+.eagle-scene {
   width: 100%;
   margin: 1.35rem auto -8rem;
 }
-.wolf-stage {
+.eagle-stage {
   position: relative;
-  height: 145px;
+  height: 180px;
   overflow: hidden;
   contain: layout paint;
 }
-.wolf-actor {
+.eagle-actor {
   position: absolute;
   top: 0;
-  left: calc(66% - 108px);
-  width: 216px;
-  aspect-ratio: 360 / 208;
+  left: calc(66% - 85px);
+  width: 170px;
+  aspect-ratio: 213.78 / 177.64;
   will-change: transform;
-  animation: wolf-arrival 1s ease both;
+  animation: eagle-arrival 1s ease both;
 }
-@keyframes wolf-arrival {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes eagle-arrival {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.wolf-drawing {
+.eagle-drawing {
+  transform: scaleX(-1);
   display: block;
   width: 100%;
   height: auto;
@@ -538,12 +543,12 @@ footer a:hover {
   .hero-bottom a span {
     margin-left: 0.5rem;
   }
-  .wolf-scene {
+  .eagle-scene {
     margin-top: 1rem;
   }
-  .wolf-actor {
-    width: 168px;
-    left: calc(66% - 84px);
+  .eagle-actor {
+    width: 132px;
+    left: calc(66% - 66px);
   }
   .section {
     width: calc(100% - 3rem);
@@ -630,7 +635,7 @@ footer a:hover {
     animation: none !important;
     transition: none !important;
   }
-  .wolf-actor {
+  .eagle-actor {
     will-change: auto;
   }
 }

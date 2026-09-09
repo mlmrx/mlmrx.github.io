@@ -1,0 +1,8 @@
+Eagle silhouette 5 by SeriousTux
+Source: https://openclipart.org/detail/177437
+License: Creative Commons CC0 1.0 Universal (public-domain dedication)
+License policy: https://openclipart.org/faq
+License text: https://creativecommons.org/publicdomain/zero/1.0/
+Asset mirror: https://www.clipsafari.com/clips/o177437-black-eagle-silhouette
+
+The SVG artwork is used unchanged. The website mirrors and animates it with CSS and JavaScript.
