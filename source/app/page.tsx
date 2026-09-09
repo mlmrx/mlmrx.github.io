@@ -248,7 +248,7 @@ export default function Home() {
       </a>
       <header className="masthead" id="top">
         <a href="#top" className="wordmark" aria-label="Mahesh Lambe home">
-          ml<span>.</span>
+          Mahesh Lambe<span>,</span>
         </a>
         <nav aria-label="Main navigation">
           <a href="#work">Work</a>
@@ -262,23 +262,17 @@ export default function Home() {
       <main id="main">
         <section className="hero" aria-labelledby="intro">
           <div className="hero-content">
-            <p className="eyebrow">Mahesh Lambe · Builder & founder</p>
             <h1 id="intro">
-              Intelligence is everywhere.
-              <br />
-              <em>Trust is what we build.</em>
+              Mahesh Lambe<span>,</span>
             </h1>
             <p className="intro">
-              I build the systems that help AI agents earn our trust.
+              builds systems for trust in the age of intelligent agents.
             </p>
-            <a className="text-link" href="#work">
-              Explore the work <span aria-hidden="true">↓</span>
-            </a>
             <WolfScene />
           </div>
           <div className="hero-bottom">
             <span>Palo Alto, California</span>
-            <span>Independent spirit. Shared progress.</span>
+            <span>AI systems · Trust · Infrastructure</span>
             <a href="#work" aria-label="Scroll to selected work">
               ↓
             </a>
