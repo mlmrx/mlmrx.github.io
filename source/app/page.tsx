@@ -149,38 +149,6 @@ const publicWork = [
     'JavaScript',
   ],
 ];
-const publicWorkSection = (
-  <section id="library" className="section library">
-    <div className="section-heading">
-      <p className="eyebrow">Public work index</p>
-      <h2>
-        Everything in the
-        <br />
-        <em>open.</em>
-      </h2>
-      <p>
-          Platforms, tools and experiments built in public.
-          <br />
-          Every entry links directly to the work.
-      </p>
-    </div>
-    <div className="work-index">
-      {publicWork.map(([name, type, description, url, language], i) => (
-        <a className="work-row" key={url} href={url}>
-          <span className="index">{String(i + 1).padStart(2, '0')}</span>
-          <div>
-            <span className="paper-meta">
-              {type} · {language}
-            </span>
-            <h3>{name}</h3>
-            <p>{description}</p>
-          </div>
-          <Arrow />
-        </a>
-      ))}
-    </div>
-  </section>
-);
 const privateWork = [
   [
     'Verified revenue infrastructure',
@@ -203,36 +171,7 @@ const privateWork = [
     'Private protocol and product work for safer transactions between people, agents and businesses.',
   ],
 ];
-const privateWorkSection = (
-  <section className="section private-work">
-    <div className="section-heading">
-      <p className="eyebrow">Private work</p>
-      <h2>
-        Some work stays
-        <br />
-        <em>under seal.</em>
-      </h2>
-      <p>
-        Titles and direction only. The details remain private until the work is
-        ready to ship.
-      </p>
-    </div>
-    <div className="private-index">
-      {privateWork.map(([title, description], i) => (
-        <div className="private-row" key={title}>
-          <span className="index">{String(i + 1).padStart(2, '0')}</span>
-          <div>
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </div>
-          <span className="private-mark" aria-label="Private work">
-            Private
-          </span>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+
 function Arrow() {
   return (
     <span aria-hidden="true" className="arrow">
@@ -240,6 +179,27 @@ function Arrow() {
     </span>
   );
 }
+
+function SectionHeading({
+  number,
+  title,
+  note,
+}: {
+  number: string;
+  title: string;
+  note?: string;
+}) {
+  return (
+    <div className="section-heading">
+      <span className="section-number" aria-hidden="true">
+        {number}
+      </span>
+      <h2>{title}</h2>
+      {note && <p>{note}</p>}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -247,66 +207,68 @@ export default function Home() {
         Skip to content
       </a>
       <header className="masthead" id="top">
-        <a href="#top" className="wordmark" aria-label="Mahesh Lambe home">
-          Mahesh Lambe<span>,</span>
-        </a>
         <nav aria-label="Main navigation">
           <a href="#work">Work</a>
           <a href="#research">Research</a>
           <a href="#about">About</a>
-          <a href="#connect">
-            Connect <Arrow />
-          </a>
+          <a href="#connect">Contact</a>
         </nav>
       </header>
       <main id="main">
         <section className="hero" aria-labelledby="intro">
           <div className="hero-content">
-            <h1 id="intro">
-              Mahesh Lambe<span>,</span>
-            </h1>
-            <p className="intro">
-              builds systems for trust in the age of intelligent agents.
-            </p>
+            <h1 id="intro">Mahesh Lambe</h1>
             <WolfScene />
           </div>
           <div className="hero-bottom">
             <span>Palo Alto, California</span>
-            <span>AI systems · Trust · Infrastructure</span>
-            <a href="#work" aria-label="Scroll to selected work">
-              ↓
+            <a href="#work">
+              A body of work <span aria-hidden="true">↓</span>
             </a>
           </div>
         </section>
-        <section id="work" className="section">
-          <div className="section-heading">
-            <p className="eyebrow">01 / Selected work</p>
-            <h2>Ideas, made real.</h2>
+
+        <section
+          id="work"
+          className="section opening-note"
+          aria-label="Introduction to the work"
+        >
+          <SectionHeading number="01" title="A note on the work" />
+          <div className="section-content">
             <p>
-              Identity, consent and evidence.
-              <br />
-              The foundations for agents we can depend on.
+              I build software, platforms and tools for a world in which people
+              and intelligent agents work together.
+            </p>
+            <p>
+              Much of that work begins with trust: who an agent is, what it may
+              do, and how we know it did the right thing.
             </p>
           </div>
+        </section>
+
+        <section id="selected" className="section" aria-label="Selected work">
+          <SectionHeading
+            number="02"
+            title="Selected work"
+            note="Two explorations in trust and accountability."
+          />
           <div className="projects">
             <article className="project">
               <div className="project-top">
-                <span className="eyebrow">Trust & identity</span>
-                <span className="project-number">01</span>
+                <span className="eyebrow">Identity & consent</span>
               </div>
-              <h3>
-                AgentHalo<span className="dot">.</span>
-              </h3>
+              <h3>AgentHalo</h3>
               <p>
-                A personal trust field for AI agents. Memory, identity,
-                permissions and consent that travel with you, across your
-                devices.
+                Your agent should carry your trust with it. AgentHalo brings
+                identity, memory, permissions and consent together across
+                devices, with a record of what an agent was allowed to do—and
+                what it did.
               </p>
-              <ul>
-                <li>Purpose-bound delegation and consent receipts</li>
-                <li>An append-only record of agent actions</li>
-                <li>Signed proofs with HaloProof</li>
-              </ul>
+              <div className="project-detail">
+                <span>Purpose-bound permissions</span>
+                <span>Consent receipts</span>
+                <span>Signed proofs</span>
+              </div>
               <a
                 href="https://github.com/mlmrx/AgentHalo"
                 className="text-link"
@@ -317,64 +279,97 @@ export default function Home() {
             <article className="project">
               <div className="project-top">
                 <span className="eyebrow">Evaluation & evidence</span>
-                <span className="project-number">02</span>
               </div>
-              <h3>
-                Truthseek<span className="dot">.</span>
-              </h3>
+              <h3>Truthseek</h3>
               <p>
-                If an agent makes a claim, the claim gets tested. An evaluation
-                harness and editor companion for putting agent output under
-                scrutiny.
+                A convincing answer is only a beginning. Truthseek puts an
+                agent’s claims to the test, through an evaluation harness and a
+                companion that brings that scrutiny into the editor.
               </p>
-              <div className="project-quote">
-                From plausible answers
-                <br />
-                <em>to tested claims.</em>
-              </div>
               <div className="project-links">
                 <a
                   href="https://github.com/mlmrx/truthseek-eval-harness"
                   className="text-link"
                 >
-                  Explore Truthseek <Arrow />
+                  Evaluation harness <Arrow />
                 </a>
                 <a
                   href="https://github.com/mlmrx/truthseek-vscode"
-                  className="small-link"
+                  className="text-link"
                 >
                   VS Code companion <Arrow />
                 </a>
               </div>
             </article>
           </div>
-          <a className="section-end" href="https://github.com/mlmrx">
-            More work on GitHub <Arrow />
-          </a>
         </section>
-        {publicWorkSection}
-        {privateWorkSection}
-        <section id="research" className="section research">
-          <div className="section-heading">
-            <p className="eyebrow">02 / Research & standards</p>
-            <h2>
-              A foundation worth
-              <br />
-              <em>building on.</em>
-            </h2>
-            <p>
-              Co-authored research on naming, discovery and trust for the
-              internet of AI agents.
-            </p>
+
+        <section
+          id="library"
+          className="section library"
+          aria-label="Public work catalogue"
+        >
+          <SectionHeading
+            number="03"
+            title="The full collection"
+            note="Public platforms, tools and experiments."
+          />
+          <div className="work-index">
+            {publicWork.map(([name, type, description, url]) => (
+              <a className="work-row" key={url} href={url}>
+                <div>
+                  <h3>{name}</h3>
+                  <p>{description}</p>
+                  <span className="paper-meta">{type}</span>
+                </div>
+                <Arrow />
+              </a>
+            ))}
+            <div className="collection-end">
+              <a className="text-link" href="https://github.com/mlmrx">
+                Follow the work on GitHub <Arrow />
+              </a>
+            </div>
           </div>
+        </section>
+
+        <section
+          id="private-work"
+          className="section private-work"
+          aria-label="Private work"
+        >
+          <SectionHeading
+            number="04"
+            title="Private work"
+            note="A few words on work that remains private."
+          />
+          <div className="private-index">
+            {privateWork.map(([title, description]) => (
+              <article className="private-row" key={title}>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="research"
+          className="section research"
+          aria-label="Research and standards"
+        >
+          <SectionHeading
+            number="05"
+            title="Research & standards"
+            note="Co-authored papers and contributions to shared foundations."
+          />
           <div className="paper-list">
-            {papers.map(([id, title, description, date], i) => (
+            {papers.map(([id, title, description, date]) => (
               <a
                 className="paper"
                 key={id}
                 href={'https://arxiv.org/abs/' + id}
               >
-                <span className="index">0{i + 1}</span>
                 <div>
                   <span className="paper-meta">
                     {date} · arXiv {id}
@@ -386,11 +381,8 @@ export default function Home() {
               </a>
             ))}
             <a className="paper" href="https://aivss.owasp.org/">
-              <span className="index">05</span>
               <div>
-                <span className="paper-meta">
-                  Standard · Reviewer & contributor
-                </span>
+                <span className="paper-meta">Reviewer & contributor</span>
                 <h3>OWASP AI Vulnerability Scoring System</h3>
                 <p>
                   A framework for assessing vulnerabilities in AI and agentic
@@ -401,88 +393,79 @@ export default function Home() {
             </a>
           </div>
         </section>
-        <section id="about" className="section about">
-          <p className="eyebrow">03 / A little context</p>
+
+        <section id="about" className="section about" aria-label="About Mahesh">
+          <SectionHeading number="06" title="A little about me" />
           <div className="about-content">
-            <h2>
-              Two decades of building.
-              <br />
-              <em>Still asking what’s next.</em>
-            </h2>
             <p>
-              I’m Mahesh, founder and CEO of Unify Dynamics. For more than
-              twenty years, I’ve worked on AI and CRM platforms for governments
-              and global enterprises, including Microsoft, PIMCO and the NYPD.
+              I’m Mahesh. For more than twenty years, I’ve worked on AI and CRM
+              platforms for governments and global enterprises, including
+              Microsoft, PIMCO and the NYPD.
             </p>
             <p>
-              Today, my work centres on the trust layer for the internet of AI
-              agents: how they identify themselves, receive permission and
-              remain accountable. I contribute to MIT’s Project NANDA and OWASP
-              AIVSS, and have invested in more than 100 startups across AI,
-              automation and enterprise software.
+              Today, I lead Unify Dynamics and work on the foundations of a more
+              trustworthy internet of AI agents. I contribute to MIT’s Project
+              NANDA and OWASP AIVSS, and have invested in more than 100 startups
+              across AI, automation and enterprise software.
             </p>
-            <div className="focus">
-              <span>Trust & identity</span>
-              <span>Agentic commerce</span>
-              <span>Standards & security</span>
-            </div>
-            <blockquote>
-              “Your agent should live where your trust lives, not where your
-              screen lives.”<cite>— AgentHalo</cite>
-            </blockquote>
+            <p>I live and work in Palo Alto, California.</p>
           </div>
         </section>
-        <section className="section writing" id="writing">
-          <div className="section-heading">
-            <p className="eyebrow">04 / Writing & talks</p>
-            <h2>Thinking in the open.</h2>
-          </div>
+
+        <section
+          id="writing"
+          className="section writing"
+          aria-label="Writing and talks"
+        >
+          <SectionHeading
+            number="07"
+            title="Writing & talks"
+            note="Notes from the work."
+          />
           <div className="writing-list">
             <a
               href="https://www.youtube.com/watch?v=RD9ANgSvSZE"
               className="writing-item"
             >
-              <span className="paper-meta">Watch / Talk</span>
+              <span className="paper-meta">Talk</span>
               <h3>Why a different DNS model for the agentic registry?</h3>
               <Arrow />
             </a>
-            {essays.map(([title, desc, url]) => (
+            {essays.map(([title, description, url]) => (
               <a className="writing-item" href={url} key={url}>
-                <span className="paper-meta">Read / Essay</span>
+                <span className="paper-meta">Essay</span>
                 <h3>{title}</h3>
-                <p>{desc}</p>
+                <p>{description}</p>
                 <Arrow />
               </a>
             ))}
           </div>
         </section>
-        <section className="contact" id="connect">
-          <p className="eyebrow">Good work begins with a conversation.</p>
-          <h2>
-            Let’s build
-            <br />
-            <em>something that matters.</em>
-          </h2>
-          <a
-            className="contact-link"
-            href="https://www.linkedin.com/in/maheshlambe"
-          >
-            Connect on LinkedIn <Arrow />
-          </a>
+
+        <section id="connect" className="section contact" aria-label="Contact">
+          <SectionHeading number="08" title="Say hello" />
+          <div className="section-content">
+            <p>
+              If our interests meet,
+              <br />
+              I’d be glad to hear from you.
+            </p>
+            <a
+              className="text-link"
+              href="https://www.linkedin.com/in/maheshlambe"
+            >
+              Connect on LinkedIn <Arrow />
+            </a>
+          </div>
         </section>
       </main>
       <footer>
         <a href="#top" className="footer-name">
           Mahesh Lambe
         </a>
-        <p>Palo Alto, California</p>
         <div>
-          <a href="https://github.com/mlmrx">
-            GitHub <Arrow />
-          </a>
-          <a href="https://medium.com/@maheshlambe">
-            Medium <Arrow />
-          </a>
+          <a href="https://github.com/mlmrx">GitHub</a>
+          <a href="https://medium.com/@maheshlambe">Medium</a>
           <a href="#top">Back to top ↑</a>
         </div>
       </footer>
