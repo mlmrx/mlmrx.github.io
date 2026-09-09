@@ -1,4 +1,4 @@
-import EagleScene from './eagle-scene';
+import KineticHero from './kinetic-hero';
 const papers = [
   [
     '2508.03101',
@@ -215,20 +215,7 @@ export default function Home() {
         </nav>
       </header>
       <main id="main">
-        <section className="hero" aria-labelledby="intro">
-          <div className="hero-content">
-            <h1 id="intro">
-              <span>Love of</span> <span>Open Secure AI</span>
-            </h1>
-            <EagleScene />
-          </div>
-          <div className="hero-bottom">
-            <span>Palo Alto, California</span>
-            <a href="#work">
-              A body of work <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-        </section>
+        <KineticHero />
 
         <section
           id="work"
