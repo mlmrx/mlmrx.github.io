@@ -126,7 +126,7 @@ a:hover .arrow {
 .hero h1 {
   max-width: calc(100% - 3rem);
   margin-inline: auto;
-  font-size: clamp(3.1rem, 7.4vw, 7.2rem);
+  font-size: clamp(2.5rem, 5.4vw, 5.75rem);
   line-height: 1.2;
   letter-spacing: -0.045em;
   text-wrap: balance;
@@ -156,33 +156,33 @@ a:hover .arrow {
 }
 .wolf-scene {
   width: 100%;
-  margin: -0.7rem auto -9rem;
+  margin: 1.35rem auto -8rem;
 }
 .wolf-stage {
   position: relative;
-  height: 180px;
+  height: 145px;
   overflow: hidden;
   contain: layout paint;
 }
 .wolf-actor {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 158px;
-  height: 158px;
-  background: url('/wolf-walk.png') no-repeat;
-  background-size: 400% 200%;
-  mix-blend-mode: multiply;
+  left: calc(66% - 108px);
+  width: 216px;
+  aspect-ratio: 360 / 208;
   will-change: transform;
+  animation: wolf-arrival 1s ease both;
 }
-.wolf-still {
-  position: absolute;
-  width: 158px;
-  height: 158px;
-  top: 0;
-  left: calc(65% - 79px);
-  object-fit: contain;
-  mix-blend-mode: multiply;
+@keyframes wolf-arrival {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.wolf-drawing {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transform-origin: center;
 }
 @keyframes arrive {
   from {
@@ -522,8 +522,12 @@ footer a:hover {
     top: 44%;
   }
   .hero h1 {
-    font-size: clamp(2.4rem, 10vw, 3.8rem);
-    letter-spacing: -0.045em;
+    font-size: clamp(2rem, 8.1vw, 3.1rem);
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+  }
+  .hero h1 span {
+    display: block;
   }
   .hero-bottom {
     left: 1.5rem;
@@ -535,15 +539,11 @@ footer a:hover {
     margin-left: 0.5rem;
   }
   .wolf-scene {
-    margin-top: -0.5rem;
+    margin-top: 1rem;
   }
-  .wolf-actor,
-  .wolf-still {
-    width: 132px;
-    height: 132px;
-  }
-  .wolf-still {
-    left: calc(60% - 66px);
+  .wolf-actor {
+    width: 168px;
+    left: calc(66% - 84px);
   }
   .section {
     width: calc(100% - 3rem);

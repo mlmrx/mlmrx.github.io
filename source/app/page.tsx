@@ -217,7 +217,9 @@ export default function Home() {
       <main id="main">
         <section className="hero" aria-labelledby="intro">
           <div className="hero-content">
-            <h1 id="intro">Mahesh Lambe</h1>
+            <h1 id="intro">
+              <span>Love of</span> <span>Open Secure AI</span>
+            </h1>
             <WolfScene />
           </div>
           <div className="hero-bottom">
