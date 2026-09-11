@@ -371,7 +371,9 @@ export default function Home() {
             ))}
             <a className="paper" href="https://aivss.owasp.org/">
               <div>
-                <span className="paper-meta">Reviewer & contributor</span>
+                <span className="paper-meta">
+                  Founding member · reviewer & contributor
+                </span>
                 <h3>OWASP AI Vulnerability Scoring System</h3>
                 <p>
                   A framework for assessing vulnerabilities in AI and agentic
@@ -384,20 +386,98 @@ export default function Home() {
         </section>
 
         <section id="about" className="section about" aria-label="About Mahesh">
-          <SectionHeading number="06" title="A little about me" />
+          <SectionHeading number="06" title="About me" />
           <div className="about-content">
             <p>
-              I’m Mahesh. For more than twenty years, I’ve worked on AI and CRM
-              platforms for governments and global enterprises, including
-              Microsoft, PIMCO and the NYPD.
+              I’m Mahesh Lambe, a founder, engineer, researcher and angel
+              investor in Palo Alto, California. I build software around a
+              simple conviction: people should retain ownership of their data,
+              their tools and the decisions made on their behalf.
             </p>
-            <p>
-              Today, I lead Unify Dynamics and work on the foundations of a more
-              trustworthy internet of AI agents. I contribute to MIT’s Project
-              NANDA and OWASP AIVSS, and have invested in more than 100 startups
-              across AI, automation and enterprise software.
-            </p>
-            <p>I live and work in Palo Alto, California.</p>
+            <div className="about-chapters">
+              <div className="about-chapter">
+                <h3>Enterprise & public service</h3>
+                <p>
+                  For more than twenty years, I’ve worked on AI, CRM and cloud
+                  platforms for governments and global enterprises, including
+                  Microsoft, PIMCO and the NYPD. My public-sector work includes
+                  large-scale systems for more than 170 California state
+                  departments. That experience shapes my focus on reliability,
+                  accountability and freedom from vendor lock-in.
+                </p>
+              </div>
+              <div className="about-chapter">
+                <h3>Founding & investing</h3>
+                <p>
+                  I’m the founder and CEO of Unify Dynamics, working across CRM,
+                  cloud and generative AI. I’ve founded four startups and, as an
+                  angel investor, backed more than 100 companies across AI,
+                  automation and enterprise software. Building companies and
+                  supporting other founders are both part of my work.
+                </p>
+              </div>
+              <div className="about-chapter">
+                <h3>Research & security</h3>
+                <p>
+                  I’m a core contributor to MIT’s Project NANDA, exploring how
+                  agents discover one another, establish identity and
+                  collaborate across systems. I co-authored the{' '}
+                  <a href="#research">four NANDA papers collected here</a>, with
+                  Ramesh Raskar and collaborators, on agent naming, verified
+                  AgentFacts, adaptive resolution and Zero Trust Agentic Access.
+                </p>
+                <p>
+                  I’m also a founding member, reviewer and contributor to the{' '}
+                  <a href="https://aivss.owasp.org/">
+                    OWASP AI Vulnerability Scoring System
+                  </a>
+                  , helping develop shared ways to assess security risks in AI
+                  and agentic systems.
+                </p>
+                <p>
+                  My upstream proposals to WebMCP address{' '}
+                  <a href="https://github.com/webmachinelearning/webmcp/pull/275">
+                    browser-tool permissions
+                  </a>{' '}
+                  and{' '}
+                  <a href="https://github.com/webmachinelearning/webmcp/pull/279">
+                    clearer tool-execution contracts
+                  </a>
+                  .
+                </p>
+              </div>
+              <div className="about-chapter">
+                <h3>Platforms & tools</h3>
+                <p>
+                  My <a href="#library">public work</a> spans user-owned AI and
+                  local software with SovereignAI and Sovereign Suite; customer
+                  relationships with FreeCRM; agent identity and consent with
+                  AgentHalo; and evaluation with Truthseek. It also includes
+                  iswebmcp, Enterprise Agent Simulation Assurance, Lego Claw,
+                  OpenWood’s creative tools, and reusable agent skills.
+                </p>
+                <p>
+                  Alongside that work, I build private systems for verified
+                  revenue, sovereign AI, enterprise agent control, evidence and
+                  agentic commerce. The common thread is making actions
+                  inspectable, permissions revocable and ownership meaningful.
+                </p>
+              </div>
+              <div className="about-chapter">
+                <h3>Open community</h3>
+                <p>
+                  Sharing what I learn has long been part of the practice. I was
+                  among the{' '}
+                  <a href="https://www.linkedin.com/posts/projectnanda_for-20-years-hes-been-on-the-front-lines-activity-7349113287264935938-EvRw">
+                    top five global MSDN contributors for five consecutive years
+                  </a>
+                  . Today, that continues through open-source projects,{' '}
+                  <a href="#writing">technical essays and conference talks</a>{' '}
+                  on agent registries, AgentFacts and the architecture of an
+                  open agentic web.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 

@@ -546,8 +546,28 @@ a:hover .arrow {
   font: 400 1.35rem/1.7 var(--serif);
   letter-spacing: -0.01em;
 }
-.about-content > p + p {
-  margin-top: 1.6rem;
+.about-chapters {
+  display: grid;
+  gap: 2.25rem;
+  margin-top: 2.75rem;
+}
+.about-chapter h3 {
+  font: 400 0.875rem/1.5 var(--sans);
+  margin-bottom: 0.7rem;
+}
+.about-chapter p {
+  font: 400 1.15rem/1.75 var(--serif);
+}
+.about-chapter p + p {
+  margin-top: 0.9rem;
+}
+.about-content a {
+  text-decoration: underline;
+  text-decoration-color: #b3b3a8;
+  text-decoration-thickness: 1px;
+}
+.about-content a:hover {
+  text-decoration-color: var(--ink);
 }
 .writing-item {
   display: grid;
