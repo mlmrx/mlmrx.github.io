@@ -201,8 +201,20 @@ const privateWork = [
     'A civic companion for finding official services and preparing for the next step. It pairs sourced public information with private personal preparation.',
   ],
   [
+    'LoveAmerica',
+    'A guide to U.S. public services that helps people understand where to look and prepare what to ask. It complements the official agency websites.',
+  ],
+  [
+    'Privacy Pal',
+    'A personal privacy and trust assistant for making sense of uncertain situations. It is designed around evidence and clear user choice.',
+  ],
+  [
     'TokenGifts',
     'An exploration of practical support for AI builders. The work focuses on clear budgets, inspectable outcomes and user-controlled participation.',
+  ],
+  [
+    'Tokenomy AI Toolkit',
+    'Additional tools for estimating model costs, speed and resource needs. The public Tokenomy product is linked in the collection above.',
   ],
   [
     'SaveTokens',
