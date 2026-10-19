@@ -44,9 +44,51 @@ const essays = [
 ];
 const publicWork = [
   [
+    'MySovereign.ai',
+    'Product',
+    'A personal AI workspace built around user-owned models, portable knowledge and inspectable behavior.',
+    'https://mysovereign.ai/',
+    'Public website',
+  ],
+  [
+    'LoveCRM.org',
+    'Product',
+    'A customer relationship product for people who want a more personal, human way to stay connected.',
+    'https://www.lovecrm.org/',
+    'Public website',
+  ],
+  [
+    'Tokenomy.ai',
+    'Platform',
+    'Runtime FinOps for AI: metering, budgets, routing and chargeback across model providers.',
+    'https://tokenomy.ai/',
+    'Public website',
+  ],
+  [
+    'LegoClaw.com',
+    'Platform',
+    'A human-guided assembly space for shaping multi-agent systems from reusable parts.',
+    'https://legoclaw.com/',
+    'Public website',
+  ],
+  [
+    'Personal Assistant Eval and Benchmark',
+    'Research preview',
+    'An evidence-first evaluation experience for understanding which tasks a personal AI can safely take on. Current profiles and results are synthetic research fixtures.',
+    'https://github.com/mlmrx/personal-assistant-eval-and-benchmark',
+    'TypeScript',
+  ],
+  [
+    'MuseTown × MuseSquare',
+    'Community platform',
+    'An independent connector directory and workflow community for personal AI agents, with a reviewable developer submission flow.',
+    'https://github.com/mlmrx/awesome-muse-connectors',
+    'TypeScript',
+  ],
+  [
     'SovereignAI',
     'Platform',
-    'User-owned models, data and runtime for a more sovereign AI stack.',
+    'A private AI command center for models, memory and knowledge you can inspect, move and run yourself.',
     'https://github.com/mlmrx/SovereignAI',
     'JavaScript',
   ],
@@ -60,21 +102,21 @@ const publicWork = [
   [
     'Enterprise Agent Simulation Assurance',
     'Platform',
-    'Deterministic simulation, evidence and release assurance for enterprise agents.',
+    'A reference platform for repeatable agent trials, evidence and release decisions, with clear limits on what it proves.',
     'https://github.com/mlmrx/enterprise-agent-simulation-assurance-platform',
     'TypeScript',
   ],
   [
     'iswebmcp',
     'Web platform',
-    'A public home for asking whether a site is ready for WebMCP.',
+    'A before-and-after lab for agent-ready websites, tool contracts and evidence that separates source hints from runtime proof.',
     'https://iswebmcp.com',
     'TypeScript',
   ],
   [
     'Lego Claw',
     'Platform',
-    'Composable building blocks for agentic systems and workflows.',
+    'Open-source foundations for composing agentic systems and workflows.',
     'https://github.com/mlmrx/lego-claw-platform',
     'TypeScript',
   ],
@@ -123,7 +165,7 @@ const publicWork = [
   [
     'Awesome Skills Library',
     'Library',
-    'A curated library for discovering reusable AI skills.',
+    'A community catalog of reusable, reviewable instruction packs for focused AI-agent tasks.',
     'https://github.com/mlmrx/awesome-skills-library',
     'Python',
   ],
@@ -151,24 +193,52 @@ const publicWork = [
 ];
 const privateWork = [
   [
-    'Verified revenue infrastructure',
-    'Private systems for making revenue operations more trustworthy, traceable and easier to verify.',
+    'MyInstinct',
+    'A local-first personal AI companion for iOS and Android. The work centers on continuity, useful memory and trustworthy everyday assistance.',
   ],
   [
-    'Sovereign AI systems',
-    'Private product work around user-owned models, data and runtime infrastructure.',
+    'PlusOne',
+    'A civic companion for finding official services and preparing for the next step. It pairs sourced public information with private personal preparation.',
   ],
   [
-    'Enterprise agent control planes',
-    'Private infrastructure for agent policy, permissions, deployment and operational control.',
+    'TokenGifts',
+    'An exploration of practical support for AI builders. The work focuses on clear budgets, inspectable outcomes and user-controlled participation.',
   ],
   [
-    'Evidence systems',
-    'Private tools for testing claims, preserving provenance and creating audit-ready records.',
+    'SaveTokens',
+    'Tools for understanding and reducing spend across coding agents. The emphasis is on diagnosis and changes the user can review.',
   ],
   [
-    'Agentic commerce',
-    'Private protocol and product work for safer transactions between people, agents and businesses.',
+    'Enterprise Agent Control Plane',
+    'Private infrastructure for agent identity, discovery, authorization, policy, routing and lifecycle management.',
+  ],
+  [
+    'System of Evidence',
+    'Private work on durable evidence records for agentic systems, with integrity checks and independent verification in mind.',
+  ],
+  [
+    'Webotify',
+    'Private revenue infrastructure for websites and AI agents, focused on clear attribution and verifiable outcomes.',
+  ],
+  [
+    'Personal Assistant Benchmark',
+    'Private evaluation research for personal-AI delegation, built around executable tasks and inspectable evidence.',
+  ],
+  [
+    'Relationship Assistant',
+    'A private, local-first assistant concept for helping people keep up with the relationships that matter to them.',
+  ],
+  [
+    'XBrain',
+    'A private research archive that organizes public enterprise-AI writing into practical working references.',
+  ],
+  [
+    'Mobile Omarchy',
+    'A private exploration of an opinionated, touch-first Linux experience for phones and open hardware.',
+  ],
+  [
+    'Agent Assurance Registry',
+    'A private concept for reviewing agent identity, runtime policy and assurance evidence together. It is exploratory work, not a certification or endorsement.',
   ],
 ];
 
@@ -294,14 +364,52 @@ export default function Home() {
         </section>
 
         <section
+          id="book"
+          className="section work-film"
+          aria-label="Product screens in motion"
+        >
+          <SectionHeading
+            number="03"
+            title="Work in motion"
+            note="A book of real product screens."
+          />
+          <div className="work-film-content">
+            <figure className="work-film-figure">
+              <picture>
+                <source
+                  srcSet="/work-book-still.png"
+                  media="(prefers-reduced-motion: reduce)"
+                />
+                <img
+                  src="/work-book.gif"
+                  alt="A softly lit three-dimensional book opens and turns through eight captured product screens."
+                  width="900"
+                  height="506"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <figcaption>
+                Screens from MySovereign.ai, LoveCRM.org, Tokenomy.ai,
+                LegoClaw.com, isWebMCP, OpenWood, AgentHalo and Agent Assurance.
+              </figcaption>
+            </figure>
+            <p className="work-film-note">
+              Each page begins with the product itself. A slow, continuous turn
+              gives every screen room to be seen.
+            </p>
+          </div>
+        </section>
+
+        <section
           id="library"
           className="section library"
           aria-label="Public work catalogue"
         >
           <SectionHeading
-            number="03"
+            number="04"
             title="The full collection"
-            note="Public platforms, tools and experiments."
+            note="The public products, platforms, tools and experiments in this collection."
           />
           <div className="work-index">
             {publicWork.map(([name, type, description, url]) => (
@@ -328,9 +436,9 @@ export default function Home() {
           aria-label="Private work"
         >
           <SectionHeading
-            number="04"
+            number="05"
             title="Private work"
-            note="A few words on work that remains private."
+            note="Titles and short descriptions; details stay private."
           />
           <div className="private-index">
             {privateWork.map(([title, description]) => (
@@ -348,7 +456,7 @@ export default function Home() {
           aria-label="Research and standards"
         >
           <SectionHeading
-            number="05"
+            number="06"
             title="Research & standards"
             note="Co-authored papers and contributions to shared foundations."
           />
@@ -386,7 +494,7 @@ export default function Home() {
         </section>
 
         <section id="about" className="section about" aria-label="About Mahesh">
-          <SectionHeading number="06" title="About me" />
+          <SectionHeading number="07" title="About me" />
           <div className="about-content">
             <p>
               I’m Mahesh Lambe, a founder, engineer, researcher and angel
@@ -453,14 +561,15 @@ export default function Home() {
                   local software with SovereignAI and Sovereign Suite; customer
                   relationships with FreeCRM; agent identity and consent with
                   AgentHalo; and evaluation with Truthseek. It also includes
-                  iswebmcp, Enterprise Agent Simulation Assurance, Lego Claw,
-                  OpenWood’s creative tools, and reusable agent skills.
+                  MySovereign.ai, LoveCRM.org, Tokenomy.ai, LegoClaw.com,
+                  isWebMCP, Enterprise Agent Simulation Assurance, OpenWood,
+                  MuseTown × MuseSquare, and reusable agent skills.
                 </p>
                 <p>
-                  Alongside that work, I build private systems for verified
-                  revenue, sovereign AI, enterprise agent control, evidence and
-                  agentic commerce. The common thread is making actions
-                  inspectable, permissions revocable and ownership meaningful.
+                  Alongside that work, I build private products for personal AI,
+                  civic services, agent control, evidence and revenue systems.
+                  The common thread is making actions inspectable, permissions
+                  revocable and ownership meaningful.
                 </p>
               </div>
               <div className="about-chapter">
@@ -487,7 +596,7 @@ export default function Home() {
           aria-label="Writing and talks"
         >
           <SectionHeading
-            number="07"
+            number="08"
             title="Writing & talks"
             note="Notes from the work."
           />
@@ -512,7 +621,7 @@ export default function Home() {
         </section>
 
         <section id="connect" className="section contact" aria-label="Contact">
-          <SectionHeading number="08" title="Say hello" />
+          <SectionHeading number="09" title="Say hello" />
           <div className="section-content">
             <p>
               If our interests meet,

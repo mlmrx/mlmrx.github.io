@@ -370,7 +370,8 @@ a:hover .arrow {
 .private-index,
 .paper-list,
 .writing-list,
-.about-content {
+.about-content,
+.work-film-content {
   grid-column: 2;
   min-width: 0;
 }
@@ -451,6 +452,40 @@ a:hover .arrow {
 }
 .project > .text-link {
   margin-top: 1.4rem;
+}
+.work-film-figure {
+  margin: 0;
+  padding: clamp(0.45rem, 1.2vw, 0.9rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 3px;
+  background: linear-gradient(145deg, #fbfaf6, #f1f0eb 70%, #e8e8e3);
+  box-shadow:
+    0 2px 5px rgba(35, 48, 47, 0.035),
+    0 25px 62px rgba(35, 48, 47, 0.11);
+}
+.work-film-figure picture,
+.work-film-figure img {
+  display: block;
+  width: 100%;
+}
+.work-film-figure img {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #f7f8f7;
+}
+.work-film-figure figcaption {
+  padding: 0.85rem 0.5rem 0.15rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+.work-film-note {
+  max-width: 560px;
+  margin-top: 1.35rem;
+  color: #676761;
+  font: 400 1.1rem/1.65 var(--serif);
 }
 .collection-note {
   font: 400 1.1rem/1.6 var(--serif);
@@ -688,7 +723,8 @@ footer a:hover {
   .private-index,
   .paper-list,
   .writing-list,
-  .about-content {
+  .about-content,
+  .work-film-content {
     grid-column: 1;
   }
   .section-heading {
