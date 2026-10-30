@@ -58,6 +58,13 @@ const publicWork = [
     'Public website',
   ],
   [
+    'Plus91',
+    'Civic service',
+    'An India-focused civic guide that brings regional service information and official-source handoffs into one place.',
+    'https://plus91.app/',
+    'Public website',
+  ],
+  [
     'Tokenomy.ai',
     'Platform',
     'Runtime FinOps for AI: metering, budgets, routing and chargeback across model providers.',
@@ -72,11 +79,25 @@ const publicWork = [
     'Public website',
   ],
   [
-    'Personal Assistant Eval and Benchmark',
+    'Personaeval',
     'Research preview',
-    'An evidence-first evaluation experience for understanding which tasks a personal AI can safely take on. Current profiles and results are synthetic research fixtures.',
-    'https://github.com/mlmrx/personal-assistant-eval-and-benchmark',
-    'TypeScript',
+    'A live research preview for evaluating which tasks a personal AI can safely take on. Profiles and results are synthetic fixtures, not commercial rankings.',
+    'https://personaeval.com/',
+    'Public website',
+  ],
+  [
+    'Agent Privacy',
+    'Privacy platform',
+    'A searchable AI-agent directory and practical privacy guides. Directory listings are marked as not reviewed.',
+    'https://agentprivacy.app/',
+    'Public website',
+  ],
+  [
+    'ConnectorBay',
+    'Connector directory',
+    'A searchable directory of hosted MCP servers and API connectors for agents, with early access for new connectors.',
+    'https://connectorbay.com/',
+    'Public website',
   ],
   [
     'MuseTown × MuseSquare',
@@ -96,8 +117,8 @@ const publicWork = [
     'FreeCRM',
     'Platform',
     'A free CRM built to stay useful, open and available to everyone.',
-    'https://github.com/mlmrx/FreeCRM',
-    'TypeScript',
+    'https://www.freecrm.dev/',
+    'Public website',
   ],
   [
     'Enterprise Agent Simulation Assurance',
@@ -112,6 +133,20 @@ const publicWork = [
     'A before-and-after lab for agent-ready websites, tool contracts and evidence that separates source hints from runtime proof.',
     'https://iswebmcp.com',
     'TypeScript',
+  ],
+  [
+    'AgentLens',
+    'Developer tools',
+    'A tool for checking agent-ready websites and exploring agent workflows, with source findings kept distinct from runtime evidence.',
+    'https://isagentic.net/',
+    'Public website',
+  ],
+  [
+    'AgentBump',
+    'Interactive demo',
+    'A two-phone Safari demo that connects agents through an Inkbox A2A handoff.',
+    'https://agentbump.up.railway.app/',
+    'Public demo',
   ],
   [
     'Lego Claw',
@@ -170,6 +205,20 @@ const publicWork = [
     'Python',
   ],
   [
+    'Awesome Agent Apps',
+    'Directory',
+    'A source-linked directory of AI-agent applications discovered across GitHub, the web and X.',
+    'https://github.com/mlmrx/awesome-agent-apps',
+    'Public repository',
+  ],
+  [
+    'Awesome Vibe Apps',
+    'Directory',
+    'A source-linked directory of apps built with AI coding tools, discovered across GitHub, the web and X.',
+    'https://github.com/mlmrx/awesome-vibe-apps',
+    'Public repository',
+  ],
+  [
     'Google AI Studio Builds',
     'Experiments',
     'A working notebook of experiments built with Google AI Studio.',
@@ -199,6 +248,18 @@ const privateWork = [
   [
     'PlusOne',
     'A civic companion for finding official services and preparing for the next step. It pairs sourced public information with private personal preparation.',
+  ],
+  [
+    'Plus86',
+    'A Chinese- and English-language civic guide with curated service information and official-source handoffs.',
+  ],
+  [
+    'Plus7',
+    'A Russian-language civic guide with practical service explanations, official links and browser-saved checklists.',
+  ],
+  [
+    'Plus55',
+    'A Portuguese-first civic guide for Brazil, built around practical starting points, official sources and locally saved checklists.',
   ],
   [
     'LoveAmerica',
@@ -569,19 +630,20 @@ export default function Home() {
               <div className="about-chapter">
                 <h3>Platforms & tools</h3>
                 <p>
-                  My <a href="#library">public work</a> spans user-owned AI and
-                  local software with SovereignAI and Sovereign Suite; customer
-                  relationships with FreeCRM; agent identity and consent with
-                  AgentHalo; and evaluation with Truthseek. It also includes
-                  MySovereign.ai, LoveCRM.org, Tokenomy.ai, LegoClaw.com,
-                  isWebMCP, Enterprise Agent Simulation Assurance, OpenWood,
-                  MuseTown × MuseSquare, and reusable agent skills.
+                  My <a href="#library">public work</a> spans user-owned AI,
+                  CRM and model economics; civic-service guides; agent
+                  discovery, privacy and consent; developer tools; and
+                  evaluation and assurance. It includes MySovereign.ai,
+                  LoveCRM.org, Tokenomy.ai, LegoClaw.com, Plus91, ConnectorBay,
+                  Agent Privacy, Personaeval, IsWebMCP, AgentLens, AgentBump,
+                  Enterprise Agent Simulation Assurance, OpenWood, MuseTown ×
+                  MuseSquare, and source-linked directories.
                 </p>
                 <p>
-                  Alongside that work, I build private products for personal AI,
-                  civic services, agent control, evidence and revenue systems.
-                  The common thread is making actions inspectable, permissions
-                  revocable and ownership meaningful.
+                  Alongside that work, I build private products for personal
+                  AI, regional civic services, privacy, agent control, evidence
+                  and revenue systems. The common thread is making actions
+                  inspectable, permissions revocable and ownership meaningful.
                 </p>
               </div>
               <div className="about-chapter">
