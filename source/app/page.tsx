@@ -362,6 +362,7 @@ export default function Home() {
           <a href="#work">Work</a>
           <a href="#research">Research</a>
           <a href="#about">About</a>
+          <a href="#writing">Writing</a>
           <a href="#connect">Contact</a>
         </nav>
       </header>
