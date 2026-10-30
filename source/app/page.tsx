@@ -1,4 +1,5 @@
 import KineticHero from './kinetic-hero';
+import LinkedInArticleArchive from '../components/linkedin-article-archive';
 const papers = [
   [
     '2508.03101',
@@ -350,7 +351,11 @@ export default function Home() {
         Skip to content
       </a>
       <header className="masthead" id="top">
-        <a className="masthead-brand" href="#top" aria-label="Mahesh Lambe home">
+        <a
+          className="masthead-brand"
+          href="#top"
+          aria-label="Mahesh Lambe home"
+        >
           Mahesh Lambe
         </a>
         <nav aria-label="Main navigation">
@@ -634,19 +639,19 @@ export default function Home() {
               <div className="about-chapter">
                 <h3>Platforms & tools</h3>
                 <p>
-                  My <a href="#library">public work</a> spans user-owned AI,
-                  CRM and model economics; civic-service guides; agent
-                  discovery, privacy and consent; developer tools; and
-                  evaluation and assurance. It includes MySovereign.ai,
-                  LoveCRM.org, Tokenomy.ai, LegoClaw.com, Plus91, ConnectorBay,
-                  Agent Privacy, Personaeval, IsWebMCP, AgentLens, AgentBump,
+                  My <a href="#library">public work</a> spans user-owned AI, CRM
+                  and model economics; civic-service guides; agent discovery,
+                  privacy and consent; developer tools; and evaluation and
+                  assurance. It includes MySovereign.ai, LoveCRM.org,
+                  Tokenomy.ai, LegoClaw.com, Plus91, ConnectorBay, Agent
+                  Privacy, Personaeval, IsWebMCP, AgentLens, AgentBump,
                   Enterprise Agent Simulation Assurance, OpenWood, MuseTown ×
                   MuseSquare, and source-linked directories.
                 </p>
                 <p>
-                  Alongside that work, I build private products for personal
-                  AI, regional civic services, privacy, agent control, evidence
-                  and revenue systems. The common thread is making actions
+                  Alongside that work, I build private products for personal AI,
+                  regional civic services, privacy, agent control, evidence and
+                  revenue systems. The common thread is making actions
                   inspectable, permissions revocable and ownership meaningful.
                 </p>
               </div>
@@ -676,7 +681,7 @@ export default function Home() {
           <SectionHeading
             number="08"
             title="Writing & talks"
-            note="Notes from the work."
+            note="Ideas from the work."
           />
           <div className="writing-list">
             <a
@@ -696,6 +701,7 @@ export default function Home() {
               </a>
             ))}
           </div>
+          <LinkedInArticleArchive />
         </section>
 
         <section id="connect" className="section contact" aria-label="Contact">
