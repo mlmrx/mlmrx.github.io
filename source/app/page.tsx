@@ -350,6 +350,9 @@ export default function Home() {
         Skip to content
       </a>
       <header className="masthead" id="top">
+        <a className="masthead-brand" href="#top" aria-label="Mahesh Lambe home">
+          Mahesh Lambe
+        </a>
         <nav aria-label="Main navigation">
           <a href="#work">Work</a>
           <a href="#research">Research</a>
@@ -363,17 +366,18 @@ export default function Home() {
         <section
           id="work"
           className="section opening-note"
-          aria-label="Introduction to the work"
+          aria-label="Why I build"
         >
-          <SectionHeading number="01" title="A note on the work" />
+          <SectionHeading number="01" title="Why I build" />
           <div className="section-content">
             <p>
-              I build software, platforms and tools for a world in which people
-              and intelligent agents work together.
+              After two decades building software for enterprises and public
+              services, I keep returning to one question: what should people be
+              able to see, choose and control?
             </p>
             <p>
-              Much of that work begins with trust: who an agent is, what it may
-              do, and how we know it did the right thing.
+              That question guides my work on AI: clear identities, meaningful
+              permissions and evidence for what systems actually do.
             </p>
           </div>
         </section>

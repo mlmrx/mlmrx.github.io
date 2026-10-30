@@ -132,8 +132,8 @@ export default function KineticHero() {
   const note =
     active === null
       ? {
-          label: 'Ideas you can explore.',
-          detail: 'Choose a word to discover the work behind it.',
+          label: 'I’m Mahesh Lambe.',
+          detail: 'I build AI systems people can inspect, trust and direct.',
         }
       : directions[active];
 
